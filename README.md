@@ -248,3 +248,22 @@ Now let's get you started with contributing to other projects. We've compiled a 
     <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px">
   </a>
 </p>
+
+## Instagram DM auto-responder
+
+This repository now includes a simple Instagram direct message auto-responder
+([`instagram_dm_bot.py`](./instagram_dm_bot.py)) that uses the
+[`instagrapi`](https://github.com/adw0rd/instagrapi) client. The bot watches for
+new messages and replies based on keyword rules that you can customize with a
+JSON configuration file.
+
+```bash
+pip install instagrapi
+python instagram_dm_bot.py --username YOUR_INSTAGRAM_USERNAME \
+    --config path/to/auto_reply_rules.json
+```
+
+If you do not supply a configuration file the script falls back to a default
+set of keyword-driven replies and a polite fallback response. Supply the
+password with `--password` or the `INSTAGRAM_PASSWORD` environment variable to
+avoid being prompted interactively.
